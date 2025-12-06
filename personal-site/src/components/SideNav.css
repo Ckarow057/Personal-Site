@@ -1,0 +1,134 @@
+.side-nav {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+.side-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.side-nav-item {
+    position: relative;
+}
+
+.side-nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.side-nav-icon {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.side-nav-button:hover .side-nav-icon {
+    color: #00FFFF;
+    transform: scale(1.1);
+}
+
+.side-nav-button.active .side-nav-icon {
+    color: #FF00BB;
+    transform: scale(1.2);
+}
+
+.side-nav-button.active::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 2px solid #FF00BB;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+
+.side-nav-tooltip {
+    position: absolute;
+    right: calc(100% + 1rem);
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.95);
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.side-nav-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: rgba(0, 0, 0, 0.95);
+}
+
+.side-nav-button:hover .side-nav-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-0.5rem);
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    .side-nav {
+        display: none;
+    }
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1024px) {
+    .side-nav {
+        right: 1rem;
+    }
+
+    .side-nav-list {
+        padding: 1rem 0.75rem;
+        gap: 1rem;
+    }
+
+    .side-nav-icon {
+        font-size: 1.25rem;
+    }
+}

@@ -5,51 +5,51 @@ const Projects = () => {
     const projects = [
         {
             id: 1,
-            title: 'E-Commerce Platform',
-            description: 'A full-featured online shopping platform with cart, checkout, and payment integration.',
-            image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
-            tags: ['React', 'Node.js', 'MongoDB'],
-            link: '#'
+            title: 'Dynamic Module Federation With Vite',
+            description: 'Full demo site showcasing dynamic module federation using Vite, React, and Node.js.',
+            image: '/vite.jpg',
+            tags: ['React', 'Node.js', 'Vite', 'Module Federation'],
+            link: 'https://github.com/Ckarow057/DynamicModuleFederation'
         },
         {
             id: 2,
-            title: 'Task Management App',
-            description: 'Collaborative task manager with real-time updates and team features.',
-            image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
-            tags: ['React', 'Firebase', 'TypeScript'],
-            link: '#'
+            title: 'tRPC Demo Site with Fastify and Drizzle ORM',
+            description: 'A demo site built with tRPC, Fastify, Tailwind CSS, and Drizzle ORM to showcase efficient backend communication and database management.',
+            image: '/trpc.jpg',
+            tags: ['React', 'CSS', 'tRPC', 'Fastify', 'Drizzle ORM', 'TypeScript', 'Tailwind CSS'],
+            link: 'https://github.com/Ckarow057/tRPC-Demo'
         },
         {
             id: 3,
-            title: 'Weather Dashboard',
-            description: 'Beautiful weather app with location-based forecasts and historical data.',
-            image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop',
-            tags: ['React', 'API Integration', 'CSS'],
-            link: '#'
+            title: 'WLC MakerSpace Documentation Site',
+            description: 'A comprehensive documentation site for the WLC MakerSpace, built using React and Bootstrap CSS. Locally hosted on a Raspberry Pi.',
+            image: '/wlc.jpg',
+            tags: ['React', 'Bootstrap CSS', 'Documentation'],
+            link: 'https://github.com/jessbrew/makerspace-documentation-site'
         },
         {
             id: 4,
-            title: 'Portfolio CMS',
-            description: 'Custom content management system for creative professionals.',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-            tags: ['Next.js', 'Prisma', 'PostgreSQL'],
-            link: '#'
+            title: 'Twilio SMS Test Framework',
+            description: 'A test framework for sending and receiving SMS messages using the Twilio API, built with Node.js and Express for People.health\'s LHD Connect platform.',
+            image: '/twilio.png',
+            tags: ['Node.js', 'Express', 'Twilio API'],
+            link: 'https://github.com/Ckarow057/test-framework'
         },
         {
             id: 5,
-            title: 'Social Media Analytics',
-            description: 'Dashboard for tracking and analyzing social media performance metrics.',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-            tags: ['React', 'D3.js', 'Express'],
-            link: '#'
+            title: 'IoT Web Component Library',
+            description: 'A web component library for IoT applications, built using Micropython and Microdot to easily integrate web socket functionality into IoT devices.',
+            image: '/iot.jpg',
+            tags: ['Micropython', 'Microdot', 'Web Components', 'IoT'],
+            link: 'https://github.com/brownjm/iot-web-components'
         },
         {
             id: 6,
-            title: 'Fitness Tracker',
-            description: 'Mobile-first fitness app with workout plans and progress tracking.',
-            image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop',
-            tags: ['React Native', 'Redux', 'Node.js'],
-            link: '#'
+            title: 'WLC Math Placement Exam',
+            description: 'A math placement exam application for incoming WLC students, but using Vue and Javascript, hostend on Linode.',
+            image: '/wlc.jpg',
+            tags: ['Vue', 'JavaScript', 'Math Placement'],
+            link: 'https://github.com/jessbrew/math-placement-exam'
         }
     ];
 
@@ -57,10 +57,10 @@ const Projects = () => {
         <section id="projects" className="projects">
             <div className="projects-container">
                 <div className="section-header">
-                    <h2 className="section-title">Featured Projects</h2>
+                    <h2 className="section-title " style={{ color: '#00FFFF' }}>Featured Projects</h2>
                     <div className="section-underline"></div>
                     <p className="section-description">
-                        Here are some of my recent projects that showcase my skills and expertise
+                        Here are some of my recent projects that showcase my skills and expertise:
                     </p>
                 </div>
 

@@ -74,6 +74,41 @@
     opacity: 0.7;
 }
 
+.secret-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00FF00;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #00FF00;
+    animation: secret-glow 2s ease infinite;
+    word-break: break-all;
+}
+
+@keyframes secret-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+    }
+}
+
+.hidden-morse {
+    margin-top: 0.5rem;
+    user-select: none;
+    transition: opacity 0.3s;
+}
+
+.hidden-morse:hover {
+    opacity: 1 !important;
+}
+
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;

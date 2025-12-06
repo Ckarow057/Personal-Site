@@ -111,7 +111,7 @@
     height: 200px;
     background: linear-gradient(135deg, #FF00BB 0%, #cc0099 100%);
     top: 10%;
-    left: 10%;
+    left: 15%;
     animation-delay: 0s;
 }
 
@@ -126,10 +126,10 @@
 
 .card-3 {
     width: 200px;
-    height: 150px;
+    height: 200px;
     background: linear-gradient(135deg, #FF00BB 0%, #00FFFF 100%);
-    bottom: 15%;
-    left: 30%;
+    bottom: 1%;
+    left: 20%;
     animation-delay: 4s;
 }
 
@@ -142,6 +142,38 @@
 
     50% {
         transform: translateY(-20px) rotate(3deg);
+    }
+}
+
+.wiggle {
+    animation: wiggle 0.5s ease infinite;
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
