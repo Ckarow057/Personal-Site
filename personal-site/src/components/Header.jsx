@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import './Header.css';
+import { HiOutlineChip } from "react-icons/hi";
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [logoClicks, setLogoClicks] = useState(0);
+    const [secretRevealed, setSecretRevealed] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,11 +25,30 @@ const Header = () => {
         }
     };
 
+    const handleLogoClick = () => {
+        const newClicks = logoClicks + 1;
+        setLogoClicks(newClicks);
+
+        // Secret Easter egg after 7 clicks
+        if (newClicks === 7 && !secretRevealed) {
+            setSecretRevealed(true);
+            alert('🎉 Secret Unlocked! You found the persistent clicker! Try Ctrl+Shift+D for more secrets...');
+            document.body.style.animation = 'rainbow-bg 3s ease infinite';
+            setTimeout(() => {
+                document.body.style.animation = '';
+            }, 3000);
+        }
+
+        scrollToSection('hero');
+    };
+
     return (
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="header-container">
-                <div className="logo" onClick={() => scrollToSection('hero')}>
-                    CK
+                <div className="logo" onClick={handleLogoClick} title={logoClicks >= 3 ? `${logoClicks} clicks... keep going!` : ''}>
+                    <HiOutlineChip color='#FF00BB' size={24} />
+                    <span className={secretRevealed ? 'logo-revealed' : ''}>CK</span>
+                    {logoClicks >= 5 && !secretRevealed && <span className="click-hint">👀</span>}
                 </div>
 
                 <button

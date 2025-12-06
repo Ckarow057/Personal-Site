@@ -83,6 +83,45 @@
     opacity: 0.9;
 }
 
+.stat-card-fun {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+    border-color: #FFD700 !important;
+    animation: stat-bounce 0.5s ease;
+}
+
+.stat-card-fun .stat-number {
+    color: #000000 !important;
+    animation: stat-pulse 1s ease infinite;
+}
+
+.stat-card-fun .stat-label {
+    color: #000000 !important;
+}
+
+@keyframes stat-bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes stat-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
 @media (max-width: 968px) {
     .about-content {
         grid-template-columns: 1fr;

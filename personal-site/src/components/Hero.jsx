@@ -2,10 +2,23 @@ import React from 'react';
 import './Hero.css';
 
 const Hero = () => {
+    const [nameClicks, setNameClicks] = React.useState(0);
+    const [showSecretText, setShowSecretText] = React.useState(false);
+
     const scrollToContact = () => {
         const element = document.getElementById('contact');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const handleNameClick = () => {
+        const clicks = nameClicks + 1;
+        setNameClicks(clicks);
+
+        if (clicks === 5) {
+            setShowSecretText(true);
+            setTimeout(() => setShowSecretText(false), 5000);
         }
     };
 
@@ -14,14 +27,29 @@ const Hero = () => {
             <div className="hero-container">
                 <div className="hero-content">
                     <h1 className="hero-title">
-                        Hi, I'm <span className="highlight">Clayton Karow</span>
+                        Hi, I'm <span
+                            className={`highlight ${nameClicks >= 3 ? 'wiggle' : ''}`}
+                            onClick={handleNameClick}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Clay Karow
+                        </span>
                     </h1>
+                    {showSecretText && (
+                        <p className="secret-subtitle" style={{
+                            color: '#FFD700',
+                            fontSize: '1.2rem',
+                            fontStyle: 'italic',
+                            animation: 'fadeIn 0.5s ease'
+                        }}>
+                            🎉 The secret keeper of Easter eggs! 🥚
+                        </p>
+                    )}
                     <h2 className="hero-subtitle">
-                        Full Stack Developer & Designer
+                        Junior Web Developer & Computer Science Student
                     </h2>
                     <p className="hero-description">
-                        I create beautiful, functional web experiences that solve real problems
-                        and delight users. Let's build something amazing together.
+                        I just code sometimes and make some neat stuff along the way.
                     </p>
                     <div className="hero-buttons">
                         <button onClick={scrollToContact} className="btn btn-primary">

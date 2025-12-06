@@ -110,6 +110,29 @@
     }
 }
 
+.skill-boosted {
+    background: linear-gradient(90deg, #FFD700, #FFA500, #FF00FF, #00FFFF) !important;
+    background-size: 200% 200% !important;
+    animation: skill-boost 1s ease infinite !important;
+}
+
+@keyframes skill-boost {
+    0% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+    }
+
+    100% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    }
+}
+
 @media (max-width: 768px) {
     .skills {
         padding: 4rem 1rem;
